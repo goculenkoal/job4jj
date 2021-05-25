@@ -1,11 +1,48 @@
 package ru.job4j.tracker;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class StartUI {
-    public static void main(String[] args) {
-        Tracker trackerTest1 = new Tracker();
-        Item item1 = new Item();
-        item1.setName("test123");
-        trackerTest1.add(item1);
-        System.out.println(trackerTest1.findById(item1.getId()).toString());
+
+    public void init(BufferedReader reader, Tracker tracker) throws IOException {
+        boolean run = true;
+        while (run) {
+            showMenu();
+            System.out.println("Select: ");
+            int select = Integer.parseInt(reader.readLine());
+            if (select == 0) {
+                System.out.println("=== Create a new Item ===");
+                System.out.print("Enter name: ");
+                String name = reader.readLine();
+                Item item = new Item(name);
+                tracker.add(item);
+                System.out.println("Добавленная заявка: " + item);
+            } else if (select == 6) {
+                run = false;
+            }
+
+        }
+    }
+
+    private void showMenu() {
+        String[] menu = {
+                "Add a new Item", "Show all items", "Edit item",
+                "Delete item", "Find item by id", "Find items by name",
+                "Exit Program"
+        };
+        System.out.println("Menu:");
+        for (int i = 0; i < menu.length; i++) {
+            System.out.println(i + ". " + menu[i]);
+        }
+    }
+
+    public static void main(String[] args) throws IOException {
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        Tracker tracker = new Tracker();
+        new StartUI().init(reader, tracker);
     }
 }
+

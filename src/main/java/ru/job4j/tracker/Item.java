@@ -4,8 +4,20 @@ public class Item {
     private int id;
     private String name;
 
+    public Item(String name) {
+        this.name = name;
+    }
+
     public int getId() {
         return id;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{"
+                + "id = " + id
+                + ", name = '" + name + '\''
+                + '}';
     }
 
     public void setId(int id) {
@@ -20,8 +32,4 @@ public class Item {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return name;
-    }
 }
