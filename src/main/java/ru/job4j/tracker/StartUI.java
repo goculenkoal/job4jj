@@ -29,6 +29,18 @@ public class StartUI {
                 } else {
                     System.out.println("The store is empty");
                 }
+            } else if (select == 2) {
+                System.out.println("=== Edit Item ====");
+                System.out.print("Enter id: ");
+                int id = Integer.parseInt(reader.readLine());
+                System.out.print("Enter name: ");
+                String name = reader.readLine();
+                Item item = new Item(name);
+                if (tracker.replace(id, item)) {
+                    System.out.println("Success");
+                } else {
+                    System.out.println("Error");
+                }
 
             } else if (select == 6) {
                 run = false;
