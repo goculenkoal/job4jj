@@ -50,6 +50,16 @@ public class StartUI {
                 } else {
                     System.out.println("Error");
                 }
+            } else if (select == 4) {
+                System.out.println("=== Find Item by ID");
+                System.out.print("Enter id: ");
+                int id = Integer.parseInt(reader.readLine());
+                Item item = tracker.findById(id);
+                if (item != null) {
+                    System.out.println(item);
+                } else {
+                    System.out.println("Wrong id: " + id + " == Item not found ==");
+                }
             } else if (select == 6) {
                 run = false;
             }
