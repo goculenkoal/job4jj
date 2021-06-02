@@ -51,7 +51,7 @@ public class StartUI {
                     System.out.println("Error");
                 }
             } else if (select == 4) {
-                System.out.println("=== Find Item by ID");
+                System.out.println("=== Find Item by ID ====");
                 System.out.print("Enter id: ");
                 int id = Integer.parseInt(reader.readLine());
                 Item item = tracker.findById(id);
@@ -59,6 +59,18 @@ public class StartUI {
                     System.out.println(item);
                 } else {
                     System.out.println("Wrong id: " + id + " == Item not found ==");
+                }
+            } else if (select == 5) {
+                System.out.println("=== Find Item by name ====");
+                System.out.print("Enter name: ");
+                String name = reader.readLine();
+                Item[] items = tracker.findByName(name);
+                if (items.length > 0) {
+                    for (Item item : items) {
+                        System.out.println(item);
+                    }
+                } else {
+                    System.out.println("Wrong name: " + name + " == Item not found ==");
                 }
             } else if (select == 6) {
                 run = false;
