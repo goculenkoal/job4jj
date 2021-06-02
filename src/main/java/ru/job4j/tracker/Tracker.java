@@ -22,19 +22,10 @@ public class Tracker {
     /**
      * Метод получения всех заявок.
      *
-     * @return возврат массива result без null элементов.
+     * @return возврат нового массива без null элементов.
      */
     public Item[] findAll() {
-        Item[] result = new Item[size]; // создание массива result размером size
-        int count = 0; //счетчик нового массива
-        for (int index = 0; index < size; index++) { //луп для прохода по массиву
-            Item item = items[index]; //запись i - го объекта  из массива items;
-            if (item != null) {
-                result[count] = item;
-                count++;
-            }
-        }
-        return Arrays.copyOf(result, count);
+        return Arrays.copyOf(items, size);
     }
 
     /**
@@ -83,7 +74,7 @@ public class Tracker {
     public boolean replace(int id, Item item) {
         int index = indexOf(id);
         boolean result = false;
-         if (id != -1) {
+         if (index != -1) {
            item.setId(id);
            items[index] = item;
            result = true;
@@ -94,8 +85,9 @@ public class Tracker {
     public boolean delete(int id) {
         boolean result = false;
         int index = indexOf(id);
-        if (id != -1) {
-            System.arraycopy(items, index + 1, items, index, size - index);
+        if (index != -1) {
+            System.arraycopy(items, index + 1, items, index, size - index - 1);
+            items[size - 1] = null;
             size--;
             result = true;
         }
