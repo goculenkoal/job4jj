@@ -1,7 +1,5 @@
 package ru.job4j.tracker;
 
-import java.io.IOException;
-
 public class StubInput implements Input {
     private String[] answers;
     private int position = 0;
@@ -11,12 +9,12 @@ public class StubInput implements Input {
     }
 
     @Override
-    public String askString(String input) throws IOException {
+    public String askString(String input) {
         return answers[position++];
     }
 
     @Override
-    public int askInt(String input) throws IOException {
+    public int askInt(String input)  {
         return Integer.parseInt(askString(input));
     }
 }

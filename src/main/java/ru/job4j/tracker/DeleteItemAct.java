@@ -1,7 +1,5 @@
 package ru.job4j.tracker;
 
-import java.io.IOException;
-
 public class DeleteItemAct implements UserAction {
     private final Output out;
 
@@ -15,7 +13,7 @@ public class DeleteItemAct implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, Tracker tracker) throws IOException {
+    public boolean execute(Input input, Tracker tracker) {
             out.println("=== Delete item ====;");
             int id = input.askInt("Enter id: ");
             if (tracker.delete(id)) {

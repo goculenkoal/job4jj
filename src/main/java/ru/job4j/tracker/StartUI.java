@@ -1,8 +1,5 @@
 package ru.job4j.tracker;
 
-
-import java.io.IOException;
-
 public class StartUI {
     private final Output out;
 
@@ -10,7 +7,7 @@ public class StartUI {
         this.out = out;
     }
 
-    public void init(Input input, Tracker tracker, UserAction[] actions) throws IOException {
+    public void init(Input input, Tracker tracker, UserAction[] actions)  {
         boolean run = true;
         while (run) {
             showMenu(actions);
@@ -31,7 +28,7 @@ public class StartUI {
         }
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args)  {
         Output output = new ConsoleOutput();
         Input input = new ValidateInput(output, new ConsoleInput());
         Tracker tracker = new Tracker();

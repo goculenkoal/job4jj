@@ -1,4 +1,5 @@
 package ru.job4j.tracker;
+
 import static org.hamcrest.core.IsNull.nullValue;
 import org.junit.Test;
 import java.io.IOException;
@@ -8,7 +9,7 @@ import static org.junit.Assert.assertThat;
 public class StartUITest {
 
     @Test
-    public void whenCreateItem() throws IOException {
+    public void whenCreateItem() {
         Output out = new StubOutput();
         Input in = new StubInput(
                 new String[]{"0", "Item name", "1"}
@@ -23,7 +24,7 @@ public class StartUITest {
     }
 
     @Test
-    public void whenReplaceItem() throws IOException {
+    public void whenReplaceItem() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("Replaced item"));
@@ -40,7 +41,7 @@ public class StartUITest {
     }
 
     @Test
-    public void whenDeleteItem() throws IOException {
+    public void whenDeleteItem() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("Deleted item"));
@@ -56,7 +57,7 @@ public class StartUITest {
     }
 
     @Test
-    public void whenFindAllItem() throws IOException {
+    public void whenFindAllItem() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("test1"));
@@ -82,7 +83,7 @@ public class StartUITest {
     }
 
     @Test
-    public void whenFindByName() throws IOException {
+    public void whenFindByName() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("test1"));
@@ -108,7 +109,7 @@ public class StartUITest {
     }
 
     @Test
-    public void whenFindById() throws IOException {
+    public void whenFindById() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("test1"));
@@ -134,7 +135,7 @@ public class StartUITest {
     }
 
     @Test
-    public void whenExit() throws IOException {
+    public void whenExit()  {
         Output out = new StubOutput();
         Input in = new StubInput(
                 new String[]{"0"}
@@ -151,7 +152,7 @@ public class StartUITest {
     }
 
     @Test
-    public void whenInvalidExit() throws IOException {
+    public void whenInvalidExit() {
         Output out = new StubOutput();
         Input in = new StubInput(
                 new String[] {"100", "0"}

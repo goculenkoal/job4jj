@@ -1,20 +1,19 @@
 package ru.job4j.tracker;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+
+import java.util.Scanner;
 
 public class ConsoleInput implements Input {
 
-    private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+   private Scanner scanner = new Scanner(System.in);
 
     @Override
-    public String askString(String input) throws IOException {
+    public String askString(String input) {
         System.out.println(input);
-        return reader.readLine();
+        return scanner.nextLine();
     }
 
     @Override
-    public int askInt(String input) throws IOException  {
+    public int askInt(String input)  {
         return Integer.parseInt(askString(input));
     }
 }

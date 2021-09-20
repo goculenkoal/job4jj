@@ -1,7 +1,5 @@
 package ru.job4j.tracker;
 
-import java.io.IOException;
-
 public class ValidateInput implements Input {
     private final Output out;
     private final Input in;
@@ -12,12 +10,12 @@ public class ValidateInput implements Input {
     }
 
     @Override
-    public String askString(String input) throws IOException {
+    public String askString(String input)  {
         return in.askString(input);
     }
 
     @Override
-    public int askInt(String question) throws IOException {
+    public int askInt(String question) {
         boolean invalid = true;
         int value = -1;
         do {
