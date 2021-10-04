@@ -10,7 +10,6 @@ public class TrackerTest {
     public void whenAddNewItemThenTrackerHasSameItem() {
         Tracker tracker = new Tracker();
         Item item = new Item("test1");
-        //item.setName("test1");
         tracker.add(item);
         Item result = tracker.findById(item.getId());
         assertThat(result.getName(), is(item.getName()));
@@ -20,11 +19,9 @@ public class TrackerTest {
     public void whenReplace() {
         Tracker tracker = new Tracker();
         Item bug = new Item("Bug");
-        //bug.setName("Bug");
         tracker.add(bug);
         int id = bug.getId();
         Item bugWithDesc = new Item("Bug with description");
-        //bugWithDesc.setName("Bug with description");
         tracker.replace(id, bugWithDesc);
         assertThat(tracker.findById(id).getName(), is("Bug with description"));
     }
@@ -33,7 +30,6 @@ public class TrackerTest {
     public void whenDelete() {
         Tracker tracker = new Tracker();
         Item bug = new Item("Bug");
-        //bug.setName("Bug");
         tracker.add(bug);
         int id = bug.getId();
         tracker.delete(id);

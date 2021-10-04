@@ -1,7 +1,5 @@
 package ru.job4j.tracker;
-
 import java.util.Arrays;
-import java.util.Objects;
 
 public class Tracker {
     private final Item[] items = new Item[100];
@@ -54,9 +52,7 @@ public class Tracker {
      * @return result - возвращаем найденную заявку, если заявки не существует - возвращаем - null;
      */
     public Item findById(int id) {
-        /* Находим индекс */
         int index = indexOf(id);
-        /* Если индекс найден возвращаем item, иначе null */
         return index != -1 ? items[index] : null;
     }
 
@@ -93,5 +89,4 @@ public class Tracker {
         }
         return result;
     }
-
 }
