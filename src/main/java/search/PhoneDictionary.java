@@ -16,12 +16,14 @@ public class PhoneDictionary {
      */
     public ArrayList<Person> find(String key) {
         ArrayList<Person> result = new ArrayList<>();
-        for (Person checkPerson : persons) {
-            if (checkPerson.getName().contains(key)
-                    || checkPerson.getSurname().contains(key)
-                    || checkPerson.getPhone().contains(key)
-                    || checkPerson.getAddress().contains(key)) {
-                result.add(checkPerson);
+        if (key != null) {
+            for (Person checkPerson : persons) {
+                if (checkPerson.getName().contains(key)
+                        || checkPerson.getSurname().contains(key)
+                        || checkPerson.getPhone().contains(key)
+                        || checkPerson.getAddress().contains(key)) {
+                    result.add(checkPerson);
+                }
             }
         }
         return result;
