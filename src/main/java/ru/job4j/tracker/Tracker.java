@@ -1,8 +1,9 @@
 package ru.job4j.tracker;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Tracker {
-    private final ArrayList<Item> items = new ArrayList<>();
+    private final List<Item> items = new ArrayList<>();
     private int ids = 1;
     private int size = 0;
 
@@ -23,8 +24,8 @@ public class Tracker {
      * @return возврат нового массива без null элементов.
      */
 
-    public ArrayList<Item> findAll() {
-        ArrayList<Item> result = new ArrayList<>();
+    public List<Item> findAll() {
+        List<Item> result = new ArrayList<>();
         result.addAll(items);
         return result;
     }
@@ -36,8 +37,8 @@ public class Tracker {
      * @return - возврат массива result без null элементов.
      */
 
-    public ArrayList<Item> findByName(String keyName) {
-        ArrayList<Item> result = new ArrayList<>();
+    public List<Item> findByName(String keyName) {
+        List<Item> result = new ArrayList<>();
         for (Item item : items) {
             if (item.getName().contains(keyName)) {
                 result.add(item);

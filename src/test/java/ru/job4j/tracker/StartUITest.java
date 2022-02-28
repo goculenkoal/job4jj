@@ -3,6 +3,7 @@ package ru.job4j.tracker;
 import static org.hamcrest.core.IsNull.nullValue;
 import org.junit.Test;
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
@@ -18,7 +19,7 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[]{"0", String.valueOf(item.getId()), replacedName, "1"}
         );
-        ArrayList<UserAction> actions = new ArrayList<>();
+        List<UserAction> actions = new ArrayList<>();
                 actions.add(new EditItemsAct(out));
                 actions.add(new ExitAct(out));
 
@@ -34,7 +35,7 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[]{"0", String.valueOf(item.getId()), "1"}
         );
-        ArrayList<UserAction> actions = new ArrayList<>();
+        List<UserAction> actions = new ArrayList<>();
         actions.add(new DeleteItemAct(out));
         actions.add(new ExitAct(out));
 
@@ -51,7 +52,7 @@ public class StartUITest {
                 new String[]{"0", "1"}
         );
 
-        ArrayList<UserAction> actions = new ArrayList<>();
+        List<UserAction> actions = new ArrayList<>();
         actions.add(new ShowAllItemsAct(out));
         actions.add(new ExitAct(out));
 
@@ -77,7 +78,7 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[]{"0", "test1", "1"}
         );
-        ArrayList<UserAction> actions = new ArrayList<>();
+        List<UserAction> actions = new ArrayList<>();
         actions.add(new FindByNameAct(out));
         actions.add(new ExitAct(out));
 
@@ -104,7 +105,7 @@ public class StartUITest {
                 new String[]{"0", String.valueOf(item.getId()), "1"}
         );
 
-        ArrayList<UserAction> actions = new ArrayList<>();
+        List<UserAction> actions = new ArrayList<>();
         actions.add(new FindByIdAct(out));
         actions.add(new ExitAct(out));
 
