@@ -40,7 +40,7 @@ public class Tracker {
     public List<Item> findByName(String keyName) {
         List<Item> result = new ArrayList<>();
         for (Item item : items) {
-            if (item.getName().contains(keyName)) {
+            if (item.getName().equals(keyName)) {
                 result.add(item);
             }
         }
