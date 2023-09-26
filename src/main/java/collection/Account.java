@@ -14,7 +14,7 @@ public class Account {
     }
 
     @Override
-    public boolean equals(Object o  ) {
+    public boolean equals(Object o) {
         if (this == o) {
             return true;
         }
