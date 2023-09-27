@@ -18,13 +18,10 @@ public class ReconstructPhrase {
         int dequeSize = evenElements.size();
         for (int i = 0; i < dequeSize; i++) {
             if (i % 2 == 0) {
-             Character c = evenElements.poll();
-                assert c != null;
-                rsl.append(c);
+                rsl.append(evenElements.poll());
             } else {
-                evenElements.remove();
+                evenElements.poll();
             }
-
         }
         return rsl.toString();
     }
@@ -33,10 +30,7 @@ public class ReconstructPhrase {
         StringBuilder rsl = new StringBuilder();
         int dequeSize = descendingElements.size();
         for (int i = 0; i < dequeSize; i++) {
-            Character c = descendingElements.pollLast();
-            assert c != null;
-            rsl.append(c);
-
+            rsl.append(descendingElements.pollLast());
         }
         return rsl.toString();
     }
