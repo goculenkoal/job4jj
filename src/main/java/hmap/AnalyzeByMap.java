@@ -65,11 +65,12 @@ public class AnalyzeByMap {
                 map.merge(subject.name(), subject.score(), Integer::sum);
             }
         }
-        for (Map.Entry<String, Integer> map2 : map.entrySet()) {
-            Label label = new Label(map2.getKey(), (double) map2.getValue());
+        for (String subject : map.keySet()) {
+            Label label = new Label(subject, (double) map.get(subject));
             labels.add(label);
         }
         labels.sort(Comparator.naturalOrder());
         return labels.get(labels.size() - 1);
     }
+
 }
